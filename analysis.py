@@ -21,22 +21,4 @@ iris_dataset = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-da
 # https://www.statology.org/pandas-to-text-file/ 
 with open('iris_summary.txt', 'w') as df:
      df.write(iris_dataset.describe().to_string())
-       
-# Histogram of each variable to PNG files
-# Loop through each numerical column in the dataset
-for column in iris_dataset.select_dtypes(include=['float64', 'int64']).columns:
-    # Create a seaborn histogram for the column
-    # https://www.w3schools.com/python/numpy/numpy_random_seaborn.asp
-    sns_plot = sns.histplot(iris_dataset[column], kde=False)
-    
-    # Set title and labels
-    sns_plot.set_title(f'Histogram of {column}')
-    sns_plot.set_xlabel(column)
-    sns_plot.set_ylabel('Frequency')
-    
-    # Save the plot as a PNG file
-    plt.savefig(f'{column}_histogram.png')
-    
-    # Clear the plot for the next iteration
-    plt.clf()
 
