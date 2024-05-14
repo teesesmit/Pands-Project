@@ -25,11 +25,12 @@ iris_dataset.head()
 with open('iris_summary.txt', 'w') as df:
      df.write(iris_dataset.describe().to_string())
 
-# Function to save histogram of each variable to PNG files
+# 2. Function to save histogram of each variable to PNG files
 def save_histograms():
     # Iterate over each numerical column in the dataset
     for column in iris_dataset.columns[:-1]:  # Exclude the target variable
         # Create a histogram plot
+        # https://www.datacamp.com/tutorial/how-to-make-a-seaborn-histogram
         plt.figure(figsize=(8, 6))
         sns.histplot(iris_dataset[column], kde=False, bins=20, color='skyblue')
         plt.title(f'Histogram of {column}', fontsize=16)
@@ -43,8 +44,35 @@ def save_histograms():
 # Call the function to save histograms
 save_histograms()
 
-# Scatter plot of the dataset
-sns.pairplot(iris_dataset,hue="species")
-plt.show()
+# 3. Scatter plot of each pair of variables
+# Create a figure with a 1x2 grid of subplots
+fig, axes = plt.subplots(1, 2, figsize=(12, 6))
+
+# Plot the Sepal scatterplot in the first subplot
+# Seperates the 3 different species (grouping varaible)
+sns.scatterplot(x='sepal_length', y='sepal_width', hue='species', data=iris_dataset, ax=axes[0])
+axes[0].legend(bbox_to_anchor=(1, 1), loc='upper left')
+axes[0].set_title('Sepal Scatter Plot')
+
+# Plot the Petal scatterplot in the second subplot
+sns.scatterplot(x='petal_length', y='petal_width', hue='species', data=iris_dataset, ax=axes[1])
+axes[1].legend(bbox_to_anchor=(1, 1), loc='upper left')
+axes[1].set_title('Petal Scatter Plot')
+
+plt.tight_layout()
+plt.savefig('Scatter_Plots.png')  # Save figure as a PNG file
+
+# 4. Function to create and save pairplot
+def save_pairplot():
+    # Create pairplot
+    sns.pairplot(iris_dataset, hue='species')
+    # Save the plot as a PNG file
+    plt.savefig('pairplot.png')
+    plt.close()
+
+# Call the function to create and save pairplot
+save_pairplot()
+
+                        
 
 
