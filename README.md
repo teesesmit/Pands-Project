@@ -5,7 +5,7 @@
 ## Table of Contents
 * [Introduction](#introduction)
 * [Project Program Description](#programming) 
-* [Analysis](#analysis)
+* [Analysis](#analysis-of-data)
 * [Technical Information](#technical-information)
 * [Summary](#summary-of)
 
@@ -35,14 +35,15 @@ For the first scatter plot we are representing the 'sepal lenght' and sepal widt
 
 For the pairplot again we use the seaborn and matplotlib libraries. The sns.pairplot, hue='species' part of the code generates a pairplot of the Iris dataset. A pairplot is a grid of scatterplots showing relationships between pairs of variables in a dataset. Assigning a hue variable adds a semantic mapping and changes the default marginal plot to a layered kernel density estimate (KDE) i.e the hue parameter is used to color the points based on the species variable, making it easier to distinguish different species in the plot.
 
-## Analysis of data:
+## Analysis of data
 ### Data Summary
-The fist section of the analysis is the summary of [data](iris_summary.txt) which visualizes the count of each column along with their average value, standard diviation, minimum and maximum values. This produces alot of useful information about the distrubution of each variable. For example for petal lenght, the minimum lenght is 1.0, the maximum is 6.9 and the avaerage petal lenght is 3.8. The 1st quartile (25th percentile) is 1.6. This tells us that only 25% of the flowers have petals shorter than 1.6. The 3rd quartile (75th percentile) is 5.1, as 75% of the flowers have petals shorter then 5.1. These summary statistics are graphically represented in the histograms, scatter plots and pair plots within this project.
+The fist section of the analysis is the summary of [data](iris_summary.txt) which visualizes the count of each column along with their average value, standard diviation, minimum and maximum values. This produces alot of useful information about the distrubution of each variable. For example for petal lenght, the minimum lenght is 1.0cm, the maximum is 6.9cm and the avaerage petal lenght is 3.8cm. The 1st quartile (25th percentile) is 1.6cm. This tells us that only 25% of the flowers have petals shorter than 1.6cm. The 3rd quartile (75th percentile) is 5.1cm, as 75% of the flowers have petals shorter then 5.1cm. These summary statistics are graphically represented in the histograms, scatter plots and pair plots within this project.
 
 ### Histograms
+Histograms show the distribution of data by plotting the frequency of data in bins. The [histogram](petal_lenght_histogram.png) for petal lenght shows that there are more flowers with petal lenghts between 1cm and 1.5cm. The distribution of this data appears to be bimodal, indicating that there are two distinct values that occur with the highest frequency, rather than a single value. Instead of having a single peak where most data points are concentrated, there are two peaks.  This suggests that the data might be coming from two different sources or groups i.e. species, each with its own central tendency. The highest frequency of[petal width](petal_width_histogram.png) is below 35 which is roughly between 0.1 and 0.2cm. There is a noticeable difference in the histograms when observing the sepal variables. The highest frequency for [sepal width](sepal_width_histogram.png) is slightly above 25, which is approximately 3cm. The distribution of sepal width is nearly symmetric and unimodal. This is similiar to [sepal lenght](sepal_lenght_histogram.png) where the distrubution is skewed slightly to the left where there are two point fighting for the highest freqency. 
 
 ### Scatter plot
-
+Scatter plots 
 ### Pairplot
 
 ### Technical information
@@ -56,7 +57,7 @@ The fist section of the analysis is the summary of [data](iris_summary.txt) whic
 
 
 
-# Conclusion
+## Conclusion
 Overall the Iris data set is a bunch of numbers that describe the Iris flowers features, like how big their petals and sepals are. It's a classic dataset used to teach people how to work with data and train machine learning models to recognize patterns and statistics. Linear Discriminant Analysis (LDA) helps to separate different species of iris flowers based on their measurements and simplifies the classification process by combining the measurements into a smaller set of variables.
 
 ## End
