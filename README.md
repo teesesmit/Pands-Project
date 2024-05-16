@@ -23,7 +23,7 @@ The imported data is stored in a dataframe called iris, which contains informati
 To summarise each variable and create a single text file, the file has to be opened, data sumerised and written to a text file. In order to do this the open function is used along side the with statement. The [open()](https://www.w3schools.com/python/python_file_handling.asp) function along with the write parameter allows you to open and write the files, however the open() function must be used with the close() function. In order to have this completed without the close() function the [with](https://realpython.com/python-with-statement/) statment will close the file without being told. With the data loaded and opened, the [describe()](https://www.w3schools.com/python/pandas/ref_df_describe.asp) method returns the summary of each varible of the data in the dataframe. However, the write() method expects a string as an input, not a pandas dataframe, hence [.to_string()](https://www.geeksforgeeks.org/python-pandas-dataframe-to_string/) method converts the pandas dataframe to a string format that can be written to a text file.
 
 ### Histogram of each variable
-Histograms are excellent ways for the visualization of large datasets to display the key features of its numeric contents in a clear straightforward manner. [Seaborn](https://seaborn.pydata.org) is a python visualization library based on matplotlib.pyplot, as referenced above matplotlib.pyplot is a collect of command style functions. These will be used in this section of the program to create the first 4 variables into histograms in python. This uses the hist() function which will read the arrays and produce a histogram. The sns.histplot function is versatile and allows extensive customization which allows for meaningful changes to assess the dataframe. In the code the 'def save_histogram' defines a function names 'save histograms' that does not take any arguments. Next the program iterates over each column in the dataframe except the last one using the '[:-1]'as that contains the target variable. This is done using slicing. The target variable is categorical, not continuous, therefore it cannot be made into a histogram. Once completed the histogram can be [created](https://www.datacamp.com/tutorial/how-to-make-a-seaborn-histogram) to preference. The histogram is then saved as a PNG file and the line save histograms is used to execute the code.
+Histograms are excellent ways for the visualization of large datasets to display the key features of its numeric contents in a clear straightforward manner. [Seaborn](https://seaborn.pydata.org) is a python visualization library based on matplotlib.pyplot, as referenced above matplotlib.pyplot is a collection of command style functions. These will be used in this section of the program to create the first 4 variables into histograms in python. This uses the hist() function which will read the arrays and produce a histogram. The sns.histplot function is versatile and allows extensive customization which allows for meaningful changes to assess the dataframe. In the code the 'def save_histogram' defines a function names 'save histograms' that does not take any arguments. Next the program iterates over each column in the dataframe except the last one using the '[:-1]'as that contains the target variable. This is done using slicing. The target variable is categorical, not continuous, therefore it cannot be made into a histogram. Once completed the histogram can be [created](https://www.datacamp.com/tutorial/how-to-make-a-seaborn-histogram) to preference. The histogram is then saved as a PNG file and the line save histograms is used to execute the code.
 
 ### Scatter plot of each variable
 In this analysis we are also using the seaborn and matplotlib libraries to create visualizations in python. [Scatter plots](https://seaborn.pydata.org/generated/seaborn.scatterplot.html#seaborn.scatterplot) show points on a graph and each point represents data. Scatter plots identifies possible relationships between changes observed in different sets of variables. It provides a visual and statistical means to test the strenght of a relationship between two varaibles. The relationship between these variables can be shown for different subsets of the data using the [hue](https://seaborn.pydata.org/generated/seaborn.scatterplot.html), size and style parameters. Hue is the grouping varaible that will produce points with different colors. It can either be categorical or numeric. In this case, the groupings were Iris-setosa, Iris-versicolor and Iris-virginica.  
@@ -35,19 +35,20 @@ For the first scatter plot we are representing the 'sepal lenght' and sepal widt
 
 For the pairplot again we use the seaborn and matplotlib libraries. The sns.pairplot, hue='species' part of the code generates a pairplot of the Iris dataset. A pairplot is a grid of scatterplots showing relationships between pairs of variables in a dataset. Assigning a hue variable adds a semantic mapping and changes the default marginal plot to a layered kernel density estimate (KDE) i.e the hue parameter is used to color the points based on the species variable, making it easier to distinguish different species in the plot.
 
-## Summary of :
-    - Data
-    – Histograms
-    – Scatter plot
-    – Any other analysis appropriate
+## Analysis of data:
+### Data Summary
+The fist section of the analysis is the summary of [data](iris_summary.txt) which visualizes the count of each column along with their average value, standard diviation, minimum and maximum values. This produces alot of useful information about the distrubution of each variable. For example for petal lenght, the minimum lenght is 1.0, the maximum is 6.9 and the avaerage petal lenght is 3.8. The 1st quartile (25th percentile) is 1.6. This tells us that only 25% of the flowers have petals shorter than 1.6. The 3rd quartile (75th percentile) is 5.1, as 75% of the flowers have petals shorter then 5.1. These summary statistics are graphically represented in the histograms, scatter plots and pair plots within this project.
 
-## Technical information
-###  
+### Histograms
+
+### Scatter plot
+
+### Pairplot
+
+### Technical information
 * Visual Stuido Code
 * python
 * Anaconda
-
-### Libraries to import
 * import seaborn as sns
 * import pandas as pd
 * import numpy as np
